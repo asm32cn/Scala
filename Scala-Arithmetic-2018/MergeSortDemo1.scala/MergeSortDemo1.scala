@@ -87,7 +87,7 @@ object MergeSortDemo1{
 			while(left + i < len){
 				mid = left + i - 1;
 				// 后一个子数组大小可能不够
-                right = iif(mid + i < len, mid + i, len - 1);
+				right = iif(mid + i < len, mid + i, len - 1);
 				merge(data, left, mid, right);
 				// 前一个子数组索引向后移动
 				left = right + 1;
