@@ -73,6 +73,8 @@ object MergeSortDemo1{
 	def MergeSortIteration(data:Array[Int]){
 		val len = data.length;
 
+        def iif(exp:Boolean, a:Int, b:Int) : Int = { if(exp) a else b; }
+
 		// 子数组索引，前一个为A[left ... mid]，后一个为A[mid + 1 ... right]
 		var left = 0;
 		var mid = 0;
@@ -85,11 +87,7 @@ object MergeSortDemo1{
 			while(left + i < len){
 				mid = left + i - 1;
 				// 后一个子数组大小可能不够
-				if (mid + i < len){
-					right = mid + i;
-				}else{
-					right = len - 1;
-				}
+                right = iif(mid + i < len, mid + i, len - 1);
 				merge(data, left, mid, right);
 				// 前一个子数组索引向后移动
 				left = right + 1;
