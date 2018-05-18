@@ -34,8 +34,7 @@ object CountingSortDemo1{
 		}
 		val B = new Array[Int](n);
 		for(i <- n - 1 to 0 by -1){
-			C(data(i)) -= 1;
-			B(C(data(i))) = data(i);
+			B({C(data(i)) -= 1;C(data(i))}) = data(i);
 		}
 		for(i <- 0 until n){
 			data(i) = B(i);
