@@ -73,7 +73,7 @@ object MergeSortDemo1{
 	def MergeSortIteration(data:Array[Int]){
 		val len = data.length;
 
-        def iif(exp:Boolean, a:Int, b:Int) : Int = { if(exp) a else b; }
+		def iif(exp:Boolean, a:Int, b:Int) : Int = { if(exp) a else b; }
 
 		// 子数组索引，前一个为A[left ... mid]，后一个为A[mid + 1 ... right]
 		var left = 0;
